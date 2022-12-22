@@ -1,6 +1,11 @@
 using ETicaretAPI.Persistence;
+using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options=>options.AddDefaultPolicy(policy => 
+    policy.WithOrigins("http://localhost:4200", "https://localhost:4200").AllowAnyHeader().AllowAnyMethod()
+    ));
 
 builder.Services.AddPersistenceServices();
 
@@ -17,6 +22,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

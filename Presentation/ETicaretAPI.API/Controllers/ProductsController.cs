@@ -21,26 +21,32 @@ namespace ETicaretAPI.API.Controllers
             _producReadRepository = producReadRepository;
         }
 
+        //[HttpGet]
+        //public async Task Get()
+        //{
+        //    await _productWriteRepository.AddRangeAsync(new()
+        //    {
+        //        new() {Id=Guid.NewGuid(), Name = "Product 9991", Price = 999, CreatedDate = DateTime.UtcNow, Stock=10},
+        //        new() {Id=Guid.NewGuid(), Name = "Product 9992", Price = 999, CreatedDate = DateTime.UtcNow, Stock=20},
+        //        new() {Id=Guid.NewGuid(), Name = "Product 9993", Price = 999, CreatedDate = DateTime.UtcNow, Stock=30},
+        //    });
+        //    var count = await _productWriteRepository.SaveAsync();
+        //    //Product p = await _producReadRepository.GetByIdAsync("218ab499-73fb-44b1-afaf-b25168d46fc4" , false);
+        //    //p.Name = "Mehmet";
+        //    //await _productWriteRepository.SaveAsync();
+
+        //    //var products = _producReadRepository.GetAll(); 
+        //    //var product3 = await _producReadRepository.GetByIdAsync("280f1542-191e-41ec-8a5a-cdede75186be");
+        //    //product3.Stock = 19;
+
+        //    //await _productWriteRepository.SaveAsync();
+
+        //}
+
         [HttpGet]
-        public async Task Get()
+        public async Task<IActionResult> Get()
         {
-            //await _productWriteRepository.AddRangeAsync(new()
-            //{
-            //    new() {Id=Guid.NewGuid(), Name = "Product 1", Price = 100, CreatedDate = DateTime.UtcNow, Stock=10},
-            //    new() {Id=Guid.NewGuid(), Name = "Product 2", Price = 200, CreatedDate = DateTime.UtcNow, Stock=20},
-            //    new() {Id=Guid.NewGuid(), Name = "Product 3", Price = 300, CreatedDate = DateTime.UtcNow, Stock=30},
-            //});
-            //var count = await _productWriteRepository.SaveAsync();
-            //Product p = await _producReadRepository.GetByIdAsync("218ab499-73fb-44b1-afaf-b25168d46fc4" , false);
-            //p.Name = "Mehmet";
-            //await _productWriteRepository.SaveAsync();
-
-            //var products = _producReadRepository.GetAll(); 
-            var product3 = await _producReadRepository.GetByIdAsync("280f1542-191e-41ec-8a5a-cdede75186be");
-            product3.Stock = 19;
-
-            await _productWriteRepository.SaveAsync();
-
+            return Ok("Merhaba Taha 9999999999999999");
         }
 
         //[HttpGet]
